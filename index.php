@@ -21,6 +21,14 @@ class Baddie
         echo "A ".__CLASS__." has been destroyed!";
         
     }
+    
+    // __toString is a magic method that happens everytime an object is echoed, eg 'echo $ganon'
+    // powerful since this will happen everytime objects are echoed, meaning a change in this
+    // implements everywhere the objects are echoed.
+    public function __toString() {
+        
+        return "$this->name";
+    }
 
     
 }
@@ -31,7 +39,7 @@ $ganon = new Baddie($evilness=8, $name="Ganon");
 //$scaldera = new Baddie(5, "Scaldera");
 
 
-unset($ganon);
+echo $ganon;
 
 //var_dump($ganon);
 
