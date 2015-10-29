@@ -4,33 +4,18 @@ class Baddie
 {
     public $evilness = 10;
     
-    public function evilUpTo15() {
+    public function __construct() {
         
-        $this-> evilness = 15;
+        echo "A ".__CLASS__." has been created!";
     }
-    
-    public function evilUpTo20() {
-        
-        $this-> evilness = 20;
-    }
-    
     
 }
 
-$hugrot = new Baddie;
-    
-$shaboo = new Baddie;
+$ganon = new Baddie;
 
-$hugrot-> evilUpTo15();
+$scaldera = new Baddie;
 
-$shaboo-> evilUpTo20();
-
-var_dump($hugrot);
-
-var_dump($shaboo);
-
-
-
+//var_dump($ganon);
 
 
 ?>
