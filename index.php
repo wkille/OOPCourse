@@ -4,16 +4,17 @@ class Baddie
 {
 	public $evilness = 10;
 	
-	public function sayHi() {
+	public function makeMoreEvil() {
 	    
-	    echo "Hi!";
+	    $this->evilness = 20;
+	    return $this->evilness;
 	}
 	
 }
 
 $ganon = new Baddie;
 
-echo $ganon -> sayHi();
+echo $ganon -> makeMoreEvil();
 
 
 ?>
