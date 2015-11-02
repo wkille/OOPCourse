@@ -1,49 +1,63 @@
 <?php
 
-class Baddie
+/* class HigherOrLower
 {
-    public $evilness = 10;
-    
-    public $name;
-    
-    // __construct is a 'magic method' that happens everytime an object is created
-    public function __construct($evilness, $name) {
+    public function __construct() {
         
-        $this->evilness = $evilness;
-        
-        $this->name = $name;
-        
+        for($i=0; $i<10; $i++) {
+            
+            $turn = rand(0, 10);
+            echo"$turn<br />";
+            ob_flush();
+            flush();
+            sleep(2);
+        }
     }
     
-    // __destruct is a 'magic method' that happens everytime an object is destroyed
-    public function __destruct() {
-        
-        echo "A ".__CLASS__." has been destroyed!";
-        
-    }
+    //if input is up arrow && $i<$i+1 then $i+1 is green
+    //else if input is up arrow && $i>$i+1 then $i+1 is red
+    //else if input is down arrow && $i<$i+1 then $i+1 is red
+    //else if input is down arrow && $i>$i+1 then $i+1 is green
+    //else $i+1 is red
     
-    // __toString is a magic method that happens everytime an object is echoed, eg 'echo $ganon'
-    // powerful since this will happen everytime objects are echoed, meaning a change in this
-    // implements everywhere the objects are echoed.
-    public function __toString() {
-        
-        return "$this->name";
-    }
 
     
 }
 
-$ganon = new Baddie($evilness=8, $name="Ganon");
+$game = new HigherOrLower();
 
-//$scaldera = new Baddie($evilness=5, $name="Scaldera");
-//$scaldera = new Baddie(5, "Scaldera");
+*/
 
+class Number {
+    
+    public $number;
+    
+    public function __construct() {
+        
+        $this->number = rand(1,10);
+        
+        echo $this->number;
+        
+        echo "<br />";
+        
+        ob_flush();
+        
+        flush();
+        
+        sleep(1);
+        
+        unset($this);
+        
+    }
+    
+    public function __destruct() {
+        
+        $number = new Number;
+        
+        
+    }
+}
 
-echo $ganon;
-
-//var_dump($ganon);
-
-//var_dump($scaldera);
-
+$number = new Number;
 
 ?>
